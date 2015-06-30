@@ -1,7 +1,7 @@
 server {
         server_name  WEBSITE ;
         listen 80;
-
+        server_tokens off;
         location / {
             proxy_pass http://localhost:PORT;
             proxy_set_header Host $host;
