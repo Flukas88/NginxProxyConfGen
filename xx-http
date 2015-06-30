@@ -1,0 +1,32 @@
+server {
+        server_name  WEBSITE ;
+        listen 80;
+
+        location / {
+            proxy_pass http://localhost:PORT;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_hide_header X-Powered-By;
+            proxy_buffering    off;
+            proxy_buffer_size  128k;
+            proxy_buffers 100  128k;
+            proxy_cache_valid  200 301 302 30m;
+            proxy_pass_header Set-Cookie;
+            proxy_cookie_domain WEBSITE localhost;
+            gzip on;
+            gzip_vary on;
+            gzip_disable msie6;
+            gzip_static on;
+            gzip_comp_level 4;
+            gzip_proxied any;
+            gzip_types text/plain
+            text/css
+            application/x-javascript
+            text/xml
+            application/xml
+            application/xml+rss
+            text/javascript;
+            expires 10m;
+        }
+}
