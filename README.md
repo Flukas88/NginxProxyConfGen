@@ -1,3 +1,3 @@
 # NginxProxyConfGen
 
-Script to generato Nginx configuration as a reverse proxy
+Script to generate Nginx configuration as a reverse proxy
