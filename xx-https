@@ -19,7 +19,7 @@ server {
             proxy_set_header https on;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_hide_header X-Powered-By;
-            proxy_buffering    off;
+            proxy_buffering    on;
             proxy_buffer_size  128k;
             proxy_buffers 100  128k;
             proxy_cache_valid  200 301 302 30m;
